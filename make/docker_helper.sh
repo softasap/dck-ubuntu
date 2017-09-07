@@ -12,8 +12,18 @@ function _getPrefix() {
         awk -F= '/prefix/{print $2}' version.txt
 }
 
+function _getUpDirLevel2() {
+         basename ${PWD%/*}
+}
+
 function getVersion() {
 	result=$(_getRelease)
+        echo $result
+}
+
+
+function getUpDirLevel2() {
+        result=$(_getUpDirLevel2)
         echo $result
 }
 
